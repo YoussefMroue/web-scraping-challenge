@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Latest Mars Data</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class = "container">
+           <div class = "jumbotron text-center"></div> 
+           <h1>Mission to Mars</h1>
+           <button class="btn btn-primary ml-1" type = "submit" href = "/scrape">Scrape New Data</button>
+        </div>
+        <h2>Latest Mars News</h2>
+        <h3>{{mars_dict.news_title</h3>
+        <p>{{mars_dict.par</p>
+        <div class = "col-5">
+            <h2>Featured Mars Image</h2>
+            <img src  = "{{mars_dict.featured_image_url}}" class = "img-fluid">
+
+        </div>
+        <div class = "col-8">
+            <div class = "card">
+                <h4>Current Weather on Mars</h4>
+                <p>{{mars_dict.mars_weather}}</p>
+            </div>
+            <h4>Mars Facts</h4>
+            {{mars_dict.mars_facts_html}}
+        </div>
+        <div class = "container text-center">
+            <h3>Mars Hemispheres</h3>
+        </div>
+        <div class = "row">
+            {%for x in mars_dict.hemisphere_urls%}
+            <div class = "col-5">
+                <div class = "card">
+                    <h5 class = "titles">{{x.title}}</h5>
+                </div>
+            </div>
+
+        </div>
+        {%endfor%}
+    </body>
+
+
+
+
+
+</html>
